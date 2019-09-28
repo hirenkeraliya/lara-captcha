@@ -1,6 +1,6 @@
 <?php
 
-namespace Freshbitsweb\LaraCaptcha\app\Http\Middleware;
+namespace Hirenkeraliya\LaraCaptcha\app\Http\Middleware;
 
 use Closure;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Freshbitsweb\LaraCaptcha;
+namespace Hirenkeraliya\LaraCaptcha;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
@@ -32,7 +32,7 @@ class LaraCaptchaServiceProvider extends ServiceProvider
     {
         $httpKernel = $this->app->make(\Illuminate\Contracts\Http\Kernel::class);
 
-        $httpKernel->pushMiddleware(\Freshbitsweb\LaraCaptcha\app\Http\Middleware\VerifyCaptcha::class);
+        $httpKernel->pushMiddleware(\Hirenkeraliya\LaraCaptcha\app\Http\Middleware\VerifyCaptcha::class);
 
         // Users can specify only the options they actually want to override
         $this->mergeConfigFrom(

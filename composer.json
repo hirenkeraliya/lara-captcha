@@ -1,13 +1,9 @@
 {
-    "name": "freshbitsweb/lara-captcha",
+    "name": "hirenkeraliya/lara-captcha",
     "description": "Laravel custom recaptcha.",
     "type": "library",
     "license": "MIT",
     "authors": [
-        {
-            "name": "Gaurav Makhecha",
-            "email": "gauravmakhecha@gmail.com"
-        },
         {
             "name": "Hiren Keraliya",
             "email": "hirenkeradiya@gmail.com"
@@ -20,13 +16,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Freshbitsweb\\LaraCaptcha\\": "src/"
+            "Hirenkeraliya\\LaraCaptcha\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Freshbitsweb\\LaraCaptcha\\LaraCaptchaServiceProvider"
+                "Hirenkeraliya\\LaraCaptcha\\LaraCaptchaServiceProvider"
             ]
         }
     },
