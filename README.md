@@ -76,7 +76,6 @@ If you encounter any issues with Lara-Captcha or have suggestions for improvemen
 ## Contributing
 Contributions to Lara-Captcha are always welcome! To contribute, simply fork the repository, make your changes, and submit a pull request.
 
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
