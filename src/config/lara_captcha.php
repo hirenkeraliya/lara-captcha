@@ -1,7 +1,9 @@
 <?php
 
 return [
-    'key' => 'laravel',
+    'enabled' => env('LARA_CAPTCHA_ENABLED', true),
+
+    'input_name' => 'laravel',
 
     'error' => [
         'message' => 'Captcha not valid.',

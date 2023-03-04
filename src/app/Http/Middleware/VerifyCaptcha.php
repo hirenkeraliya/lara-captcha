@@ -19,7 +19,11 @@ class VerifyCaptcha
             return $next($request);
         }
 
-        $inputName = 'custom_' . config('lara_captcha.key');
+        if (config('lara_captcha.enabled') === false) {
+            return $next($request);
+        }
+
+        $inputName = 'custom_' . config('lara_captcha.input_name');
 
         if ($request->get($inputName)[$request->get('_token')]) {
             abort(config('lara_captcha.error.status_code'), config('lara_captcha.error.message'));
