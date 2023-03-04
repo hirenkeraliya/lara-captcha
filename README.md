@@ -1,7 +1,7 @@
 # lara-captcha
 
 # Laravel Captcha (Laravel 9.x)
-Laravel captcha to helps you to stop bots form submission and provide a bit security to your public forms.
+Lara-Captcha is a Laravel package that provides an effective way to prevent bot submissions and enhance the security of public forms.
 
 ## Requirements
 | PHP    | Laravel | Package |
@@ -10,29 +10,33 @@ Laravel captcha to helps you to stop bots form submission and provide a bit secu
 
 ## Installation
 
-1) Install the package by running this command in your terminal/cmd:
-```
+Follow these steps to install the package:
+
+1) Run the following command in your terminal/cmd:
+```php
 composer require hirenkeraliya/lara-captcha
 ```
 
-2) You can import config file by running this command in your terminal/cmd
-```
+2) Import the configuration file by running this command in your terminal/cmd:
+```php
 php artisan vendor:publish --tag=lara-captcha-config
 ```
 
-3) Add `@captcha` in your form after the csrf token.
+3) Add `@captcha` in your form after the CSRF token.
 
-4) Your route needs to use this middleware
-  `->middleware(\Hirenkeraliya\LaraCaptcha\app\Http\Middleware\VerifyCaptcha::class)`
+4) To use the middleware, add the following line to your route:
+  ```php
+  ->middleware(\Hirenkeraliya\LaraCaptcha\app\Http\Middleware\VerifyCaptcha::class)
+  ```
 
-That's it.
+That's it! Your form is now secured against bot submissions.
 
 
 ## Authors
 
 * [**Hiren Keraliya**](https://github.com/hirenkeraliya) - *Initial work*
 
-See also the list of [contributors](https://github.com/hirenkeraliya/lara-captcha/graphs/contributors) who participated in this project.
+See the [list of contributors](https://github.com/hirenkeraliya/lara-captcha/graphs/contributors) who participated in this project.
 
 ## License
 
@@ -40,4 +44,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Special Thanks to
 
-* [Laravel](https://laravel.com) Community
+*  Special thanks to the [Laravel](https://laravel.com) community for their support
