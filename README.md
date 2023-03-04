@@ -22,9 +22,21 @@ php artisan vendor:publish --tag=lara-captcha-config
 
 3) Add `@captcha` in your form after the csrf token.
 
-4) Add below code in your `app/Http/Kernel.php` `$routeMiddleware`'s list.
-```
-'captcha' => \Hirenkeraliya\LaraCaptcha\app\Http\Middleware\VerifyCaptcha::class,
-```
+4) your public route needs to use this middleware `\Hirenkeraliya\LaraCaptcha\app\Http\Middleware\VerifyCaptcha`
 
-5) your public route needs to use this middleware `->middleware('captcha')`
+That's it.
+
+
+## Authors
+
+* [**Hiren Keraliya**](https://github.com/hirenkeraliya) - *Initial work*
+
+See also the list of [contributors](https://github.com/hirenkeraliya/lara-captcha/graphs/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+## Special Thanks to
+
+* [Laravel](https://laravel.com) Community
