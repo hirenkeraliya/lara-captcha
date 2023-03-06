@@ -1,7 +1,7 @@
 # lara-captcha
 
 # Laravel Captcha (Laravel 9.x)
-Lara-Captcha is a Laravel package that provides an effective way to prevent bot submissions and enhance the security of public forms.
+Lara-Captcha is a reliable and easy-to-use package for preventing bot submissions and enhancing the security of public forms in Laravel. With its simple integration and multiple customization options, it's a great choice for developers looking to improve the safety of their forms.
 
 ## Requirements
 | PHP    | Laravel | Package |
@@ -50,7 +50,20 @@ php artisan vendor:publish --tag=lara-captcha-config
   ```php
   use Hirenkeraliya\LaraCaptcha\app\Http\Middleware\VerifyCaptcha;
 
-  ->middleware(VerifyCaptcha::class)
+  Route::post('contact-us', [ContactUsController::class, 'index'])->name('front.contact_us')->middleware(VerifyCaptcha::class);
+  ```
+  or You can apply it to multiple routes by utilizing route grouping.
+
+  ```php
+  use Hirenkeraliya\LaraCaptcha\app\Http\Middleware\VerifyCaptcha;
+
+  Route::group(['middleware' => VerifyCaptcha::class], function () {
+    Route::post('contact-us', [ContactUsController::class, 'index'])->name('front.contact_us');
+  });
+
+  Route::middleware([VerifyCaptcha::class])->group(function () {
+    Route::post('contact-us', [ContactUsController::class, 'index'])->name('front.contact_us');
+  });
   ```
 
 That's it! Your form is now secured against bot submissions.
@@ -60,12 +73,11 @@ Lara-Captcha provides multiple configuration options that you can modify to fit 
 
 You can modify the following configuration options:
 
-- `error.message`: The error message to display when a bot submission is detected
-- `error.status_code`: The error status code to display when a bot submission is detected
-- `input_name`: The name of the input field in your form
+- `enabled`: The validation can be enabled or disabled.
+- `input_name`: The name of the input field in your form.
+- `error.message`: The error message to display when a bot submission is detected.
+- `error.status_code`: The error status code to display when a bot submission is detected.
 
-## Conclusion
-Lara-Captcha is a reliable and easy-to-use package for preventing bot submissions and enhancing the security of public forms in Laravel. With its simple integration and multiple customization options, it's a great choice for developers looking to improve the safety of their forms.
 ## Authors
 
 * [**Hiren Keraliya**](https://github.com/hirenkeraliya) - *Initial work*
