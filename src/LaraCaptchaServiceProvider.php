@@ -32,8 +32,6 @@ class LaraCaptchaServiceProvider extends ServiceProvider
     {
         $httpKernel = $this->app->make(\Illuminate\Contracts\Http\Kernel::class);
 
-        $httpKernel->pushMiddleware(\Hirenkeraliya\LaraCaptcha\app\Http\Middleware\VerifyCaptcha::class);
-
         // Users can specify only the options they actually want to override
         $this->mergeConfigFrom(
             __DIR__.'/config/lara_captcha.php',
